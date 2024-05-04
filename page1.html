@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honda</title>
+    <title>BMW</title>
     <link rel="shortcut icon" href="img/Black White Simple Monochrome Initial Name Logo.png" type="image/x-icon">
 </head>
 <style>
+body{
+    margin: 0px;
+    padding: 0px;
+}
 menu{
     display: flex;
     justify-content: space-between;
+    
     padding: 0px;
 }
-#comp-side{
+#comp a{
     list-style: none;
+    text-decoration: none;
+    color: black;
+}
+#comp a :hover{
+    background-color: lightskyblue;
+    color: darkblue;
+    border-radius: 30px;
 }
 menu li{
     display: inline;
-    padding-right:20px ;
+    margin-right:20px ;
+    padding: 8px;
 }
-#user-side{
+#user{
     list-style: none;
+}
+#user a{
+    text-decoration: none;
+    color: black;
+}
+#user a :hover{
+    background-color: lightskyblue;
+    color: rgb(53, 23, 13);
+    border-radius: 30px;
 }
 .model{
     float: left;
@@ -36,13 +58,13 @@ menu li{
 <body>
 <header>
     <menu>
-        <ul id="comp-side">
+        <ul id="comp">
             <a href=""><li>Home</li></a>
             <a href=""><li>About</li></a>
             <a href=""><li>Models</li></a>
             <a href=""><li>Contact us</li></a>
         </ul>
-        <ul id="user-side">
+        <ul id="user">
             <a href="" ><li>&#x1f6d2; &nbsp; Cart</li></a>
             <a href=""><li>&#x1f50d; &nbsp; Search</li></a>
             <a href=""><li>&#x1F464; &nbsp; Profile</li></a>
