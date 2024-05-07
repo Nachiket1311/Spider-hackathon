@@ -5,8 +5,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
     <style>
         body {
             margin: 0;
@@ -117,8 +115,9 @@
 
   <!-- Video Background -->
 <div id="video-container">
-    <video autoplay audio loop src="bmw.mp4" style="opacity: 0.8;">
+    <video id="video" src="bmw.mp4" autoplay muted loop style="opacity: 0.8;">
         <source src="bmw.mp4" type="video/mp4">
+        <source src="bmw.ogg" type="video/ogg">
         Your browser does not support the video tag.
     </video>
     <!-- BMW Opening Sentence -->
@@ -131,7 +130,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <!-- BMW Logo -->
-        <a href="https://www.bmw.com"><img src="logo.png" alt="BMW Logo" ></a>
+        <a href="#"><img src="logo.png" alt="BMW Logo" ></a>
         
         <!-- Navigation Links -->
         <a href="Home.html">Models</a>
@@ -151,5 +150,11 @@
 
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const video = document.getElementById("video");
+  video.play();
+});
+</script>
 </body>
 </html>
