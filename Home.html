@@ -106,13 +106,28 @@
             width: 50%;
 
         }
-        .search {
-            position:relative;
+        .search-container {
+            position: relative;
+            margin-right: 10px;
             float: right;
-            top: 20px;  
-            margin-right: 20px;
-                        
         }
+
+        .search-container input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .search-container button {
+            padding: 6px 10px;
+            margin-top: 8px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
         
     </style>
 </head>
@@ -146,11 +161,13 @@
         <a href="Home.html">Connected Drive</a>
         <!-- <a href="Home.html">More Tools</a> -->
         <a href="Home.html">Limited edition</a>
+        <div class="search-container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </div>
-    
-    </div>
-    <div class="search">
-        <a href="#">&#x1f50d; &nbsp; Search</a>
     </div>
 <div class="double-box">
     <div class="first-box">
