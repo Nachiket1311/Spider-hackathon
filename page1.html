@@ -10,14 +10,11 @@
 body{
     margin: 0px;
     padding: 0px;
-    background:url("https://erepublic.brightspotcdn.com/dims4/default/32bc446/2147483647/strip/true/crop/3979x2075+510+0/resize/840x438!/format/webp/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F7d%2Ff8%2Faecc34e249c3ac44491898214f0c%2Fshutterstock-360752264.jpg")no-repeat;
-    background-size: cover;
-    background-position: left;
 }
 header{
     background-color: rgba(0, 0, 0, 0.73);
     margin-bottom: 15px;
-    
+    z-index: 1;
 }
 .hlogo{
     width: 100px;  
@@ -60,11 +57,11 @@ menu li{
     border-radius: 30px;
 }
 .model{
-    background-color: rgba(89, 64, 250, 0.667);
+    background-color: rgba(132, 132, 132, 0.73);
     float: left;
     padding: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 70px;
+    margin-right: 60px;
     margin-bottom: 20px;
     border-radius: 15px;
     color: white;
@@ -73,7 +70,7 @@ menu li{
 .model button{
     width: 100%;
     padding: 10px;
-    background-color: rgba(38, 48, 243, 0.851);
+    background-color: rgba(0, 0, 0, 0.851);
     color: white;
 }
 .model:hover img{
@@ -95,7 +92,28 @@ menu li{
   background: rgb(68, 0, 255); 
   border-radius: 20px;
 }
+.video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Ensure the video is behind other content */
+        }
 
+        /* Styling for video element */
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Ensure the video is behind other content */
+        }
 </style>
 <style>
     #loader-wrapper{position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 15; overflow: hidden;}
@@ -198,6 +216,12 @@ menu li{
         </div>
       </div>
 <header>
+    <div class="video-container">
+        
+        <video id="video"  autoplay muted loop style="opacity: 0.8;">
+            <source src="THE M3 CS (2023)..mp4"  type="video/mp4">
+        </video>
+    </div>
     <menu>
         <ul id="comp">
             <a href=""><li>Home</li></a>
