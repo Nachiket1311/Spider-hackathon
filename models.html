@@ -84,6 +84,8 @@ menu li{
 }
 ::-webkit-scrollbar {
   width: 6px;
+  display: none;
+  
 }
 ::-webkit-scrollbar-track {
   background: #afafafc4;
@@ -116,7 +118,7 @@ menu li{
         }
 </style>
 <style>
-    #loader-wrapper{position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 15; overflow: hidden;}
+    #loader-wrapper{position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 15; overflow:hidden; height: 140vh;}
    
    .loader{width: 150px; height: 150px; border: 1px #fff solid; position: absolute; left: 50%; top: 50%; margin: -75px 0 0 -75px; border-radius: 50%;}
    
@@ -224,9 +226,10 @@ menu li{
     </div>
     <menu>
         <ul id="comp">
-            <a href=""><li>Home</li></a>
+            <a href="Home.html"><li>Home</li></a>
+            <a href="Limited_edition.html"><li>limited-edition</li></a>
+            <a href="models.html"><li>Models</li></a>
             <a href=""><li>About</li></a>
-            <a href=""><li>Models</li></a>
             <a href=""><li>Contact us</li></a>
         </ul>
         <center>
@@ -296,6 +299,7 @@ menu li{
         function hideSpeedometer() {
          const loaderWrapper = document.getElementById('loader-wrapper');
          loaderWrapper.style.display = 'none';
+         document.scrollingElement.style.display = "content"
        }
        
        // Add an event listener to the window load event
