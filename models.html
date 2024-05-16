@@ -66,6 +66,9 @@ menu li{
     border-radius: 15px;
     color: white;
     transition: all ease-in-out 0.5s;
+    max-width: 300px;
+    height: 350px;
+
 }
 .model button{
     width: 100%;
@@ -77,10 +80,6 @@ menu li{
     transform: rotate3d(0, 1, 0, 360deg) scale(1.1);
     /* transform: ; */
     transition: 2.5s;
-}
-.model img{
-    width: 300px;
-    height: 200px;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -116,6 +115,15 @@ menu li{
             transform: translate(-50%, -50%);
             z-index: -1; /* Ensure the video is behind other content */
         }
+        .img-model{
+            max-width: 300px;
+        max-height: 200px;
+        }
+    .img-model img{
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: cover;
+    }
 </style>
 <style>
     #loader-wrapper{position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 15; overflow:hidden; height: 140vh;}
@@ -243,53 +251,65 @@ menu li{
     </menu>
 </header>
 <div class="model">
-<img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+    <div class="img-model">
+    <img src="img\BMW X3\cosySec.png" alt="preview BMW x3">
+    </div>
 <caption>
-    <h4>BMW M2</h4>
+    <h4>BMW x3</h4>
     <p>Starting from Rs. 1,000,000</p>
     <a href=""><button>Book Now</button></a>
 </caption>
 </div>
 <div class="model">
-    <img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+    <div class="img-model">
+    <img src="img/THE ALL-NEW BMW M2 COUPÉ/cosySec.png" alt="preview THE ALL-NEW BMW M2 COUPÉ">
+    </div>
     <caption>
-        <h4>BMW M2</h4>
+        <h4>THE ALL-NEW BMW M2 COUPÉ</h4>
        
         <p>Starting from Rs. 1,000,000</p>
         <a href=""><button>Book Now</button></a>
     </caption>
 </div>
 <div class="model">
-    <img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+    <div class="img-model">
+    <img src="img/THE FULLY ELECTRIC BMW i4/cosySec.png" alt="preview THE FULLY ELECTRIC BMW i4">
+    </div>
     <caption>
-        <h4>BMW M2</h4>
+        <h4>THE FULLY ELECTRIC BMW i4</h4>
        
         <p>Starting from Rs. 1,000,000</p>
         <a href=""><button>Book Now</button></a>
     </caption>
 </div>
 <div class="model">
-    <img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+    <div class="img-model">
+    <img src="img/THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE/cosySec (1).png" alt="preview THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE">
+    </div>
     <caption>
-        <h4>BMW M2</h4>
+        <h4>THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE</h4>
        
         <p>Starting from Rs. 1,000,000</p>
         <a href=""><button>Book Now</button></a>
     </caption>
     </div>
     <div class="model">
-        <img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+        <div class="img-model">
+        <img src="img/THE NEW BMW Z4 M40i/cosySec.png" alt="preview THE NEW BMW Z4 M40i">
+        </div>
         <caption>
-            <h4>BMW M2</h4>
+            <h4>THE NEW BMW Z4 M40i</h4>
            
             <p>Starting from Rs. 1,000,000</p>
             <a href=""><button>Book Now</button></a>
         </caption>
     </div>
     <div class="model">
-        <img src="img/BMW M2/preview img.jpg" alt="preview BMW M2">
+        <div class="img-model">
+        <img src="img\BMW M2\preview img.png" alt="preview THE NEW BMW X5">
+        </div>
         <caption>
-            <h4>BMW M2</h4>
+            <h4>THE NEW BMW X5</h4>
            
             <p>Starting from Rs. 1,000,000</p>
             <a href=""><button>Book Now</button></a>
