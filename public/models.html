@@ -10,6 +10,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    background-color: #1e1e1e;
 }
 header{
     background-color: rgba(0, 0, 0, 0.73);
@@ -49,7 +50,7 @@ header{
         /* Navbar styling */
         .navbar {
             text-decoration: none;
-            background-color: whitesmoke;
+            background-color: rgb(255, 255, 255);
             height: 100px;
             width: 100%;
             display:flex;
@@ -142,28 +143,7 @@ header{
   background: rgb(68, 0, 255); 
   border-radius: 20px;
 }
-.video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Ensure the video is behind other content */
-        }
 
-        /* Styling for video element */
-        video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1; /* Ensure the video is behind other content */
-        }
         .img-model{
             max-width: 300px;
         max-height: 200px;
@@ -275,12 +255,7 @@ header{
         </div>
       </div>
 <header>
-    <div class="video-container">
-        
-        <video id="video"  autoplay muted loop style="opacity: 0.8;">
-            <source src="THE M3 CS (2023)..mp4"  type="video/mp4">
-        </video>
-    </div>
+   
     <div class="navbar">
         <!-- BMW Logo -->
         <a href="#"><img src="logo.png" alt="BMW Logo" ></a>
