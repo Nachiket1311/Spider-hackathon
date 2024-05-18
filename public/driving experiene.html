@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M Driving Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    font-size: 16px;
+}
+
+
+
+#hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+#hero .hero-content h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#experience, #world {
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#experience h2, #world h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#experience p, #world p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-gallery img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+.map img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+.experience-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.experience-highlights .highlight {
+    width: 45%;
+    text-align: left;
+}
+
+.experience-highlights .highlight img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the video is behind other content */
+}
+
+/* Styling for video element */
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the video is behind other content */
+}
+
+/* Navbar styling */
+
+.navbar a {
+    color:black; /* Set initial font color to black */
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    position: relative; /* Required for absolute positioning of the underline */
+}
+
+.navbar a:hover {
+    color: whitesmoke; /* Change font color to white smoke when hovered */
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust as needed to position the underline */
+    width: 0; /* Initially set width to 0 */
+    height: 3px; /* Adjust as needed to change the thickness of the underline */
+    background-color: rgb(57, 174, 220); /* Blue underline color */
+    transition: width 0.3s; /* Smooth transition for the underline width */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Expand the underline to full width when hovered */
+}
+
+
+.navbar {
+    text-decoration: none;
+    background-color: whitesmoke;
+    color: black; /* Set default font color */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 29px;
+    z-index: 1; /* Ensure the navbar is in front of the video */
+    transition: all 0.3s ease; /* Smooth transition for background color change */
+}
+
+.navbar:hover {
+    background-color: black;
+    opacity: 0.7;
+    color: whitesmoke; /* Change font color to white when hovered */
+}
+
+
+
+.navbar a img {
+    width: 50px;
+}
+
+.search-container {
+    margin-left: auto;
+    float: left;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.search-container button {
+    padding: 6px 10px;
+    margin-top: 8px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+
+</style>
+
+
+<style>
+    @media (max-width: 768px) {
+        .image-gallery, .experience-highlights {
+            flex-direction: column;
+        }
+    
+        .image-gallery img, .experience-highlights .highlight {
+            width: 100%;
+        }
+    }
+    
+</style>
+<body>
+    <header>
+        <div class="navbar" >
+            <!-- BMW Logo -->
+            <a href="Home.html"><img src="logo.png" alt="BMW Logo" ></a>
+            
+            <!-- Navigation Links -->
+            <a href="models.html">Models</a>
+            <a href="driving experiene.html">BMW Driving Experience</a>
+            <a href="Limited_edition.html">Limited Edition</a>
+            <div class="search-container">
+                <form action="/search" method="GET">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            
+        </div>
+    </header>
+    
+    <section id="hero">
+        <div class="hero-content">
+            <video id="video" src="i7.mp4" autoplay muted loop style="opacity: 0.8;">
+                <source src="i7.mp4" type="video/mp4">
+                <source src="bmw.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <h1>BMW M DRIVING EXPERIENCE</h1>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <h2>Explore the Thrill of BMW M</h2>
+        <p>Discover the ultimate driving thrill with the BMW M Driving Experience. Whether on the race track or on the road, the M models deliver a driving experience unlike any other.</p>
+        <div class="image-gallery">
+            <img src="bmw-m-series-m2-coupe-mb-technical-mediumteaser.jpg" alt="Driving Experience 1">
+            <img src="driving2.jpg" alt="Driving Experience 2">
+        </div>
+    </section>
+    
+    <section id="world">
+        <h2>DISCOVER THE WORLD OF DRIVING</h2>
+        <p>With an international network of Driving Experience sites, you can explore our world-class driving programs worldwide. Experience the excellence of BMW M driving performance across the globe.</p>
+        <div class="map">
+            <img src="world-map.jpg" alt="World Map">
+        </div>
+        <div class="experience-highlights">
+            <div class="highlight">
+                <img src="highlight1.jpg" alt="Highlight 1">
+                <p>Highlight Description 1</p>
+            </div>
+            <div class="highlight">
+                <img src="highlight2.jpg" alt="Highlight 2">
+                <p>Highlight Description 2</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 BMW. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
