@@ -1,240 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: auto; /* Prevents scrollbars due to video size */
-        }
-
-        /* Video container */
-        #video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Ensure the video is behind other content */
-        }
-
-        /* Styling for video element */
-        video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1; /* Ensure the video is behind other content */
-        }
-
-        /* Navbar styling */
-        .navbar {
-            text-decoration: none;
-            background-color: whitesmoke;
-            height: 100px;
-            width: 100%;
-            display:flex;
-            align-items: center;
-            padding: 0 29px;
-            z-index: 1; /* Ensure the navbar is in front of the video */
-        }
-
-        .navbar a {
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        .navbar a:hover {
-            background-color: black;
-            
-            opacity: 0.7;
-        }
-
-        .navbar a img {
-            width: 50px;
-        }
-        .navbar:hover {
-            background-color: black;
-            opacity: 0.7;
-            color: white;
-        }
-        .navbar:hover a {
-            color: white;
-        }
-        .navbar a {
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-            transition: all 0.3s ease; /* Smooth transition for underline */
-            position: relative; /* Required for absolute positioning of the underline */
-        }
-
-        .navbar a:hover {
-            color: white;
-        }
-
-        .navbar a:hover::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -3px; /* Adjust as needed to position the underline */
-            width: 100%;
-            height: 3px; /* Adjust as needed to change the thickness of the underline */
-            background-color: rgb(57, 174, 220); /* Change to your desired color */
-            z-index: 2; /* Ensure the underline is above the navbar background */
-        }
-
-        .first-box{
-            background-color: antiquewhite;
-            margin-left: auto;
-            width: 50%;
-        }
-        .second-box{
-            background-color: azure;
-            margin-right: auto;
-            width: 50%;
-
-        }
-         .search-container {
-            float: right;
-            position: relative;
-            top: -11px;
-            margin-left: 290px;
-            
-        }
-
-        .search-container input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
-
-        .search-container button {
-            padding: 6px 10px;
-            margin-top: 8px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-        .image-container {
-        float: right;
-        padding: 20px;
-        margin-top: 50%; /* Align to bottom of the video */
-        background-color: black;
-        width: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* Individual image styling */
-    .image-container img {
-        float: left;
-        width: 70%; /* Adjust as needed */
-        height: auto;
-        flex-wrap: wrap;
-
-    }
-
-/* Paragraph styling */
-.image-container p {
-    width: 50%; /* Adjust as needed */
-    margin-left: 20px; /* Add spacing between image and paragraph */
-}
-        
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Experience Portal | Spider Hackathon</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Video Background -->
-<div id="video-container">
-    <video id="video" src="bmw.mp4" autoplay muted loop style="opacity: 0.8;">
-        <source src="bmw.mp4" type="video/mp4">
-        <source src="bmw.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
-    <!-- BMW Opening Sentence -->
-    <h1 style="color: white; position: absolute; top: 40%; left: 50%; transform: translateX(-50%); text-align: center; z-index: 1; font-family: 'Times New Roman', Times, serif;font-size: 50px;">
-        Experience the Ultimate Driving Machine
-    </h1>
-</div>
-
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <!-- BMW Logo -->
-        <a href="index.html"><img src="logo.png" alt="BMW Logo" ></a>
-        <div class="menu">
-        <!-- Navigation Links -->
-        <a href="models.html">Models</a>
-        <!-- <a href="Home.html">View Stock</a> -->
-        <a href="driving experiene.html">BMW Driving Experience</a>
-        <a href="Limited_edition.html">Limited edition</a>
-        <div class="search-container">
-            <form action="/search" method="GET">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-    </div>
-    <div class="image-container"  style="justify-content: space-around;">
-        <div>
-            <h1><span>G-Power</span></h1>
-            <h4 style="flex-direction: row;color: #ddd;margin: 10px;">As a premium manufacturer,<span> G-POWER</span> doesn't just offer fast and beautiful cars. They are also available exactly the way you want them. In times of increasing individualization, we are there for you. The <span> G-POWER</span> Manufactur makes automotive dreams come true and enables you as a customer to realize your very own automobile. The uncompromising implementation of your ideas is the central task. German engineering in engine construction and a unique exterior and interior at the highest level. In the <span>G-POWER</span> factory, every vehicle is an exclusive, unique piece.</h4>
-        </div>
-
-        
-        <img src="steering-gpower.jpg" alt="">
-        <img src="engine-G-Power-4.jpg" alt="">
-    
-    </div>
-    <div class="image-container"  style="justify-content: space-around;">
-        <div>
-            <h1 style="color: skyblue;">ALPINA</h1>
-            <h4 style="flex-direction: row;color: #ddd;margin: 10px;">The ALPINA car configurator lets you select any current BMW ALPINA model and specify the options of your liking. Choose between many available exterior colours and upholstery designs, add optional equipment and find out more about the standard equipment. You can save your configuration or send it directly to a BMW ALPINA partner of your choic</h4>
-        </div>
-
-        <img src="Alpina_logo.svg.png" alt="" style="width: 300px;">
-        <img src="engine1-ALPINA.jpeg" alt="">
-        <img src="gear-alpiina.jpg" alt="">
-
-
-        <div class="footer">
-            <div class="contact-info" >
-                <h3>Contact Us</h3>
-                <p style="text-align: center;">Email: bmw@gmail.com</p>
-                <p>Phone: +1234567890</p>
-                <p>Address: 123 Main Street, City, Country</p>
+    <!-- STICKY GLASSMORPHISM NAVBAR (Right-Aligned Search Bar) -->
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand">
+                    <img src="logo.png" alt="BMW Logo">
+                    <span>BMW</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="models.html" class="nav-link">Models</a>
+                    <a href="Limited_edition.html" class="nav-link">Limited Edition</a>
+                    <a href="driving experiene.html" class="nav-link">M Driving Experience</a>
+                </div>
             </div>
-            <div class="limited-edition">
-                <h3>About Limited Edition Alpina and G-Power BMW</h3>
-                <p>The limited edition Alpina and G-Power BMW models represent the pinnacle of performance, luxury, and exclusivity. Crafted with precision engineering and bespoke design, these models offer a unique driving experience that combines exhilarating performance with unparalleled comfort.</p>
-                <p>Each limited edition model is meticulously crafted to embody the heritage and innovation of the BMW brand, pushing the boundaries of automotive excellence. With limited production runs, these models are coveted by enthusiasts and collectors alike, making them a true symbol of automotive excellence.</p>
+
+            <!-- SEARCH BAR: PUSHED TO THE FAR RIGHT -->
+            <div class="search-container">
+                <form class="search-form" id="searchForm" action="models.html" method="GET">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search models, M series, electric..." name="search" id="searchInput" autocomplete="off">
+                    <button type="submit" aria-label="Search">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CINEMATIC VIDEO HERO SECTION -->
+    <section class="hero-section">
+        <video class="hero-video" id="video" autoplay muted loop playsinline>
+            <source src="bmw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Spider Hackathon Showcase</span>
+            <h1 class="hero-title">Experience The Ultimate Driving Machine</h1>
+            <p class="hero-subtitle">Pinnacle German engineering, relentless motorsport dynamics, and bespoke tuning excellence by G-POWER & ALPINA.</p>
+            <div class="hero-actions">
+                <a href="models.html" class="btn btn-primary">
+                    <span>Explore Models</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="driving experiene.html" class="btn btn-secondary">M Driving Experience</a>
+                <a href="Limited_edition.html" class="btn btn-secondary">Limited Edition</a>
             </div>
         </div>
-    
-    </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const video = document.getElementById("video");
-  video.play();
-});
-</script>
+    </section>
+
+    <!-- G-POWER TUNING HOUSE SHOWCASE -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-tag tag-gpower">Exclusive Performance House</span>
+            <h2 class="section-title">G-POWER Manufactur</h2>
+            <p class="section-desc">Pushing the boundaries of series production. Every G-POWER vehicle is an exclusive, handcrafted masterpiece engineered for unrivaled output.</p>
+        </div>
+
+        <div class="showcase-grid">
+            <div class="showcase-info">
+                <h3>Bespoke Supercar Engineering</h3>
+                <p>As a premier performance manufacturer, G-POWER doesn't just create blisteringly fast automobiles—they engineer them precisely to your vision. In an era of increasing individualization, the G-POWER Manufactur turns automotive aspirations into reality.</p>
+                
+                <div class="spec-chips">
+                    <span class="spec-chip">🔥 Biturbo Optimization</span>
+                    <span class="spec-chip">⚙️ Bespoke Engine Calibrations</span>
+                    <span class="spec-chip">🏎️ Forged Aerodynamics</span>
+                    <span class="spec-chip">🏁 German Precision Engineering</span>
+                </div>
+
+                <a href="Limited_edition.html" class="btn btn-primary" style="background: linear-gradient(135deg, #ff7700, #c45500); box-shadow: 0 4px 16px rgba(255, 119, 0, 0.35);">
+                    Explore G-POWER Edition
+                </a>
+            </div>
+
+            <div class="showcase-gallery">
+                <div class="gallery-card featured">
+                    <img src="engine-G-Power-4.jpg" alt="G-Power Engine Engineering">
+                </div>
+                <div class="gallery-card">
+                    <img src="steering-gpower.jpg" alt="G-Power Cockpit Craftsmanship">
+                </div>
+                <div class="gallery-card">
+                    <img src="img2.1.jpg" alt="G-Power Performance Detail">
+                </div>
+            </div>
+        </div>
+
+        <!-- ALPINA PERFORMANCE SHOWCASE -->
+        <div class="showcase-grid reverse">
+            <div class="showcase-info">
+                <span class="section-tag tag-alpina">Aristocratic Grand Touring</span>
+                <h3>BMW ALPINA — Bespoke Refinement</h3>
+                <p>The ALPINA car configurator empowers you to tailor any BMW ALPINA vehicle to exacting specifications. Select from bespoke exterior paint finishes, handcrafted Lavalina leather interiors, signature multi-spoke wheels, and specialized Switch-Tronic drivetrains.</p>
+
+                <div class="spec-chips">
+                    <span class="spec-chip">✨ Lavalina Handcrafted Leather</span>
+                    <span class="spec-chip">⚡ Switch-Tronic Gearbox</span>
+                    <span class="spec-chip">💎 Classic 20-Spoke Alpina Alloys</span>
+                    <span class="spec-chip">🛡️ Gran Turismo Comfort & Power</span>
+                </div>
+
+                <a href="Limited_edition.html" class="btn btn-primary" style="background: linear-gradient(135deg, #1b4d89, #0f2c52); box-shadow: 0 4px 16px rgba(27, 77, 137, 0.4);">
+                    Configure ALPINA Models
+                </a>
+            </div>
+
+            <div class="showcase-gallery">
+                <div class="gallery-card featured" style="background: #0f131a; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <img src="Alpina_logo.svg.png" alt="ALPINA Crest" style="object-fit: contain; max-height: 80%;">
+                </div>
+                <div class="gallery-card">
+                    <img src="engine1-ALPINA.jpeg" alt="ALPINA Biturbo Powertrain">
+                </div>
+                <div class="gallery-card">
+                    <img src="gear-alpiina.jpg" alt="ALPINA Switch-Tronic Gearshift">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK MODEL PREVIEW STRIP -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section-header">
+            <span class="section-tag" style="color: var(--bmw-cyan);">Showroom Highlights</span>
+            <h2 class="section-title">Electrifying Performance & Modern SAVs</h2>
+            <p class="section-desc">From zero-emission BMW i electric mobility to versatile xDrive Sports Activity Vehicles.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+            <div class="gallery-card" style="height: 280px; position: relative;">
+                <img src="electric ix.webp" alt="Fully Electric BMW iX">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.85));">
+                    <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 4px;">BMW iX Electric</h4>
+                    <p style="font-size: 0.85rem; color: var(--bmw-cyan);">Pioneering Electric Luxury</p>
+                </div>
+            </div>
+            <div class="gallery-card" style="height: 280px; position: relative;">
+                <img src="ix.webp" alt="BMW SAV Series">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.85));">
+                    <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 4px;">BMW SAV Lineup</h4>
+                    <p style="font-size: 0.85rem; color: var(--bmw-cyan);">All-Terrain Intelligent xDrive</p>
+                </div>
+            </div>
+            <div class="gallery-card" style="height: 280px; position: relative;">
+                <img src="special offer.jpeg" alt="BMW Driving Special Offers">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.85));">
+                    <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 4px;">Exclusive Ownership</h4>
+                    <p style="font-size: 0.85rem; color: var(--bmw-cyan);">Special Offers & Driving Programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODERN LUXURY FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                    <img src="logo.png" alt="BMW" style="width: 36px; height: 36px;">
+                    <h3 style="font-size: 18px; color: #fff; letter-spacing: 1px;">BMW EXPERIENCE</h3>
+                </div>
+                <p>Created for the Spider Hackathon. Celebrating over a century of automotive leadership, visionary electric mobility, and track-proven motorsport heritage.</p>
+                <p style="color: var(--bmw-cyan); font-weight: 500;">Bespoke Tuning: G-POWER & ALPINA Edition</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home Experience</a></li>
+                    <li><a href="models.html">Model Showroom</a></li>
+                    <li><a href="Limited_edition.html">Limited Editions</a></li>
+                    <li><a href="driving experiene.html">M Driving Experience</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Models</h4>
+                <ul class="footer-links">
+                    <li><a href="models.html?filter=m">BMW M2 & M4 Competition</a></li>
+                    <li><a href="models.html?filter=electric">BMW i4 Electric Gran Coupé</a></li>
+                    <li><a href="models.html?filter=sav">BMW X3 & X5 SAV</a></li>
+                    <li><a href="models.html">BMW Z4 Roadster</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact & Inquiries</h4>
+                <div class="footer-contact-item">
+                    <span>📍</span>
+                    <span>BMW Experience Headquarters, Munich, Germany</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span>📞</span>
+                    <span>+1 (800) 831-1117</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span>✉️</span>
+                    <span>contact@bmw-experience.hackathon</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 BMW Digital Experience. Developed for Spider Hackathon by <strong>Nachiket Palekar</strong> & <strong>Ashok Thaniyath</strong>.</p>
+            <div>
+                <a href="https://github.com/Nachiket1311/Spider-hackathon" target="_blank" style="margin-left: 20px;">GitHub Repository</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure video plays smoothly
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("video");
+            if (video) {
+                video.play().catch(function() {
+                    // Autoplay fallback
+                });
+            }
+        });
+    </script>
 </body>
 </html>

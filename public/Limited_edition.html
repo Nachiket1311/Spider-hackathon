@@ -1,260 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: auto; /* Allow scrolling */
-            background-color: rgb(0, 0, 0); /* Set background color to white */
-        }
-
-        /* Video container */
-        #video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Ensure the video is behind other content */
-        }
-
-        /* Styling for video element */
-        video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1; /* Ensure the video is behind other content */
-        }
-
-        /* Navbar styling */
-       
-        .navbar a {
-            color:black; /* Set initial font color to black */
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-            position: relative; /* Required for absolute positioning of the underline */
-        }
-        
-        /* .navbar a:hover {
-            color: whitesmoke; 
-        } */
-        
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -3px; /* Adjust as needed to position the underline */
-            width: 0; /* Initially set width to 0 */
-            height: 3px; /* Adjust as needed to change the thickness of the underline */
-            background-color: rgb(57, 174, 220); /* Blue underline color */
-            transition: width 0.3s; /* Smooth transition for the underline width */
-        }
-        
-        .navbar a:hover::after {
-            width: 100%; /* Expand the underline to full width when hovered */
-        }
-        
-
-        .navbar {
-            text-decoration: none;
-            background-color: whitesmoke;
-            color: black; /* Set default font color */
-            height: 100px;
-            display: flex;
-            align-items: center;
-            padding: 0 29px;
-            z-index: 1; /* Ensure the navbar is in front of the video */
-            transition: all 0.3s ease; /* Smooth transition for background color change */
-        }
-        
-        /* .navbar:hover {
-            background-color: black;
-            opacity: 0.7;
-            color: whitesmoke;
-        } */
-
-       
-
-        .navbar a img {
-            width: 50px;
-        }
-
-        .search-container {
-            margin-left: auto;
-            float: left;
-        }
-
-        .search-container input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
-
-        .search-container button {
-            padding: 6px 10px;
-            margin-top: 8px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-
-       /* Container for images and content */
-       .image-container {
-        float: right;
-        padding: 20px;
-        margin-top: 50%; /* Align to bottom of the video */
-        background-color: black;
-        width: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* Individual image styling */
-    .image-container img {
-        float: left;
-        width: 70%; /* Adjust as needed */
-        height: auto;
-        flex-wrap: wrap;
-
-    }
-
-/* Paragraph styling */
-.image-container p {
-    width: 100%; /* Adjust as needed */
-    margin-left: 20px; /* Add spacing between image and paragraph */
-}
-
-.footer {
-    position: relative;
-    background-color: #000;
-    color: #ccc;
-    padding: 30px 0;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Contact details styles */
-.contact-info {
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-/* Limited edition content styles */
-.limited-edition{
-    width: 100%;
-    font-style: italic;
-    text-align: center;
-}
-.limited-edition p{
-    width: 100%;
-}
-span{
-    color: orange;
-}
-
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Limited Edition & Bespoke Tuning | Spider Hackathon</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  
-<div id="video-container">
-    <video id="video"  autoplay muted loop style="opacity: 0.8;">
-        <source src="https://video.wixstatic.com/video/273eca_ebc326ad91874b17aceb2a3b8b13c5a7/1080p/mp4/file.mp4" type="video/mp4">
-        <source src="bmw.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
-    
-    
-    <h1 style="color: lightgrey; position: absolute; top: 40%; left: 50%; transform: translateX(-50%); text-align: center; z-index: 1; font-family: 'Times New Roman', Times, serif;font-size: 50px;">
-        <span style="color: orange;">HIGHEST CRAFTMANSHIP</span>
-Personal. Individually. Full of ideas.
-    </h1>
-</div>
-
-
-
-    <div class="navbar" >
-        <!-- BMW Logo -->
-        <a href="index.html"><img src="logo.png" alt="BMW Logo" ></a>
-        
-        <!-- Navigation Links -->
-        <a href="models.html">Models</a>
-        <a href="driving experiene.html">BMW Driving Experience</a>
-        <a href="Limited_edition.html">Limited Edition</a>
-        <div class="search-container">
-            <form action="/search" method="GET">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-        
-    </div>
-
-    <!-- Image Container -->
-    <div class="image-container"  style="justify-content: space-around;">
-        <div>
-            <h1><span>G-Power</span></h1>
-            <h4 style="flex-direction: row;color: #ddd;margin: 10px;">As a premium manufacturer,<span> G-POWER</span> doesn't just offer fast and beautiful cars. They are also available exactly the way you want them. In times of increasing individualization, we are there for you. The <span> G-POWER</span> Manufactur makes automotive dreams come true and enables you as a customer to realize your very own automobile. The uncompromising implementation of your ideas is the central task. German engineering in engine construction and a unique exterior and interior at the highest level. In the <span>G-POWER</span> factory, every vehicle is an exclusive, unique piece.</h4>
-        </div>
-
-        
-        <img src="steering-gpower.jpg" alt="">
-        <img src="engine-G-Power-4.jpg" alt="">
-    
-    </div>
-    <div class="image-container"  style="justify-content: space-around;">
-        <div>
-            <h1 style="color: skyblue;">ALPINA</h1>
-            <h4 style="flex-direction: row;color: #ddd;margin: 10px;">The ALPINA car configurator lets you select any current BMW ALPINA model and specify the options of your liking. Choose between many available exterior colours and upholstery designs, add optional equipment and find out more about the standard equipment. You can save your configuration or send it directly to a BMW ALPINA partner of your choic</h4>
-        </div>
-
-        <img src="Alpina_logo.svg.png" alt="" style="width: 300px;">
-        <img src="engine1-ALPINA.jpeg" alt="">
-        <img src="gear-alpiina.jpg" alt="">
-
-
-        <div class="footer">
-            <div class="contact-info" >
-                <h3>Contact Us</h3>
-                <p style="text-align: center;">Email: bmw@gmail.com</p>
-                <p>Phone: +1234567890</p>
-                <p>Address: 123 Main Street, City, Country</p>
+    <!-- STICKY GLASSMORPHISM NAVBAR (Right-Aligned Search Bar) -->
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand">
+                    <img src="logo.png" alt="BMW Logo">
+                    <span>BMW</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="models.html" class="nav-link">Models</a>
+                    <a href="Limited_edition.html" class="nav-link active">Limited Edition</a>
+                    <a href="driving experiene.html" class="nav-link">M Driving Experience</a>
+                </div>
             </div>
-            <div class="limited-edition">
-                <h3>About Limited Edition Alpina and G-Power BMW</h3>
-                <p>The limited edition Alpina and G-Power BMW models represent the pinnacle of performance, luxury, and exclusivity. Crafted with precision engineering and bespoke design, these models offer a unique driving experience that combines exhilarating performance with unparalleled comfort.</p>
-                <p>Each limited edition model is meticulously crafted to embody the heritage and innovation of the BMW brand, pushing the boundaries of automotive excellence. With limited production runs, these models are coveted by enthusiasts and collectors alike, making them a true symbol of automotive excellence.</p>
+
+            <!-- SEARCH BAR: PUSHED TO THE FAR RIGHT -->
+            <div class="search-container">
+                <form class="search-form" id="searchForm" action="models.html" method="GET">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search models, M series, tuning..." name="search" id="searchInput" autocomplete="off">
+                    <button type="submit" aria-label="Search">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CINEMATIC VIDEO HERO SECTION -->
+    <section class="hero-section">
+        <video class="hero-video" id="video" autoplay muted loop playsinline>
+            <source src="THE M3 CS (2023)..mp4" type="video/mp4">
+            <source src="bmw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag" style="border-color: rgba(255, 119, 0, 0.4); color: var(--gpower-orange); background: rgba(255, 119, 0, 0.15);">
+                Limited Production & Bespoke Craftsmanship
+            </span>
+            <h1 class="hero-title">Highest Craftsmanship. Unrivaled Power.</h1>
+            <p class="hero-subtitle">Personal. Individual. Full of automotive passion. Discover the engineering mastery behind limited-run ALPINA and G-POWER BMW editions.</p>
+            <div class="hero-actions">
+                <a href="#gpower" class="btn btn-primary" style="background: linear-gradient(135deg, #ff7700, #c45500); box-shadow: 0 4px 16px rgba(255, 119, 0, 0.35);">
+                    Explore G-POWER
+                </a>
+                <a href="#alpina" class="btn btn-secondary">Explore ALPINA</a>
             </div>
         </div>
-    
-    </div>
-    
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-  const video = document.getElementById("video");
-  video.play();
-});
-</script>
+    </section>
+
+    <!-- G-POWER SECTION -->
+    <section class="section" id="gpower">
+        <div class="section-header">
+            <span class="section-tag tag-gpower">Automotive Dreams Realized</span>
+            <h2 class="section-title">The G-POWER Performance Manufactur</h2>
+            <p class="section-desc">Handcrafted supercars based on iconic BMW M platforms. Relentless output, track validation, and zero compromises.</p>
+        </div>
+
+        <div class="showcase-grid">
+            <div class="showcase-info">
+                <h3>Uncompromising Power & Tailored Engineering</h3>
+                <p>As a premium manufacturer, G-POWER doesn't just offer exceptionally fast cars—they engineer each chassis strictly according to your desires. In an era of mass standardization, the G-POWER Manufactur crafts automotive dreams into bespoke reality.</p>
+                <p>German engineering at the bleeding edge of turbocharger construction, high-flow exhaust thermodynamics, and bespoke interior ergonomics ensure every vehicle that rolls out of the factory is an exclusive collector's piece.</p>
+
+                <div class="spec-chips">
+                    <span class="spec-chip">🌪️ Bi-Tronik Performance Mapping</span>
+                    <span class="spec-chip">⚙️ Forged Monoblock Wheels</span>
+                    <span class="spec-chip">🏎️ Carbon Aerodynamic Splitters</span>
+                    <span class="spec-chip">⚡ 800+ HP Engine Upgrades</span>
+                </div>
+            </div>
+
+            <div class="showcase-gallery">
+                <div class="gallery-card featured">
+                    <img src="engine-G-Power-4.jpg" alt="G-Power Engine">
+                </div>
+                <div class="gallery-card">
+                    <img src="steering-gpower.jpg" alt="G-Power Interior">
+                </div>
+                <div class="gallery-card">
+                    <img src="img2.1.jpg" alt="G-Power Craftsmanship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALPINA SECTION -->
+    <section class="section" id="alpina" style="padding-top: 0;">
+        <div class="section-header">
+            <span class="section-tag tag-alpina">The Aristocracy of Performance</span>
+            <h2 class="section-title">BMW ALPINA — Bespoke Grand Touring</h2>
+            <p class="section-desc">Harmonizing high-speed autobahn velocity with unmatched comfort and artisan tailoring.</p>
+        </div>
+
+        <div class="showcase-grid reverse">
+            <div class="showcase-info">
+                <h3>Bespoke Configuration & Grand Turismo Comfort</h3>
+                <p>The ALPINA car configurator lets you select any current BMW ALPINA model and specify individual options to your liking. Choose between bespoke exterior paint hues, natural Lavalina leather upholstery, and signature 20-spoke lightweight alloy wheels.</p>
+                <p>Each ALPINA engine is assembled by a single technician at the Buchloe facility, pairing effortless low-end torque with the revolutionary Switch-Tronic transmission for flawless long-distance touring.</p>
+
+                <div class="spec-chips">
+                    <span class="spec-chip">💎 Hand-Selected Lavalina Leather</span>
+                    <span class="spec-chip">🕹️ ALPINA Switch-Tronic Controls</span>
+                    <span class="spec-chip">🏁 Iconic Multi-Spoke Classic Wheels</span>
+                    <span class="spec-chip">🛡️ Individual Production Number Plaque</span>
+                </div>
+            </div>
+
+            <div class="showcase-gallery">
+                <div class="gallery-card featured" style="background: #0f131a; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <img src="Alpina_logo.svg.png" alt="Alpina Emblem" style="object-fit: contain; max-height: 80%;">
+                </div>
+                <div class="gallery-card">
+                    <img src="engine1-ALPINA.jpeg" alt="Alpina Biturbo Engine">
+                </div>
+                <div class="gallery-card">
+                    <img src="gear-alpiina.jpg" alt="Alpina Switch-Tronic Console">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTOR VALUE & PHILOSOPHY -->
+    <section class="section" style="padding-top: 0;">
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-card); border-radius: 20px; padding: 48px; text-align: center; box-shadow: var(--shadow-soft);">
+            <h3 style="font-size: 2rem; color: #fff; margin-bottom: 16px;">The Legacy of Limited Production</h3>
+            <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto 28px auto; line-height: 1.8;">
+                The limited edition Alpina and G-Power BMW models represent the pinnacle of performance, luxury, and exclusivity. Crafted with precision engineering and bespoke design, these machines offer a unique driving experience combining exhilarating performance with unparalleled refinement.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="models.html" class="btn btn-primary">Browse All Models</a>
+                <a href="driving experiene.html" class="btn btn-secondary">Experience Track Days</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODERN LUXURY FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                    <img src="logo.png" alt="BMW" style="width: 36px; height: 36px;">
+                    <h3 style="font-size: 18px; color: #fff; letter-spacing: 1px;">BMW EXPERIENCE</h3>
+                </div>
+                <p>Created for the Spider Hackathon. Celebrating over a century of automotive leadership, visionary electric mobility, and track-proven motorsport heritage.</p>
+                <p style="color: var(--gpower-orange); font-weight: 500;">Bespoke Tuning: G-POWER & ALPINA Edition</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home Experience</a></li>
+                    <li><a href="models.html">Model Showroom</a></li>
+                    <li><a href="Limited_edition.html">Limited Editions</a></li>
+                    <li><a href="driving experiene.html">M Driving Experience</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tuning Programs</h4>
+                <ul class="footer-links">
+                    <li><a href="#gpower">G-POWER Hurricane Upgrades</a></li>
+                    <li><a href="#alpina">ALPINA Switch-Tronic Tuning</a></li>
+                    <li><a href="models.html">Series Production Showroom</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact & Inquiries</h4>
+                <div class="footer-contact-item">
+                    <span>📍</span>
+                    <span>BMW Experience Headquarters, Munich, Germany</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span>📞</span>
+                    <span>+1 (800) 831-1117</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span>✉️</span>
+                    <span>bespoke@bmw-experience.hackathon</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 BMW Digital Experience. Developed for Spider Hackathon by <strong>Nachiket Palekar</strong> & <strong>Ashok Thaniyath</strong>.</p>
+            <div>
+                <a href="https://github.com/Nachiket1311/Spider-hackathon" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("video");
+            if (video) {
+                video.play().catch(function() {});
+            }
+        });
+    </script>
 </body>
 </html>

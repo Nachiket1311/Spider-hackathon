@@ -3,351 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW</title>
-    <link rel="shortcut icon" href="img/Black White Simple Monochrome Initial Name Logo.png" type="image/x-icon">
+    <title>BMW Models & Showroom | Spider Hackathon</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-body{
-    margin: 0px;
-    padding: 0px;
-    background-color: #1e1e1e;
-}
-header{
-    background-color: rgba(0, 0, 0, 0.73);
-    margin-bottom: 15px;
-    z-index: 1;
-}
-.hlogo{
-    width: 100px;  
-    height:auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.search-container {
-            float: right;
-            position: relative;
-            top: -11px;
-            margin-left: 290px;
-            
-        }
-
-        .search-container input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
-
-        .search-container button {
-            padding: 6px 10px;
-            margin-top: 8px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        /* Navbar styling */
-        .navbar {
-            text-decoration: none;
-            background-color: rgb(255, 255, 255);
-            height: 100px;
-            width: 100%;
-            display:flex;
-            align-items: center;
-            padding: 0 29px;
-            z-index: 1; /* Ensure the navbar is in front of the video */
-        }
-
-        .navbar a {
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        .navbar a:hover {
-            background-color: black;
-            
-            opacity: 0.7;
-        }
-
-        .navbar a img {
-            width: 50px;
-        }
-        .navbar:hover {
-            background-color: black;
-            opacity: 0.7;
-            color: white;
-        }
-        .navbar:hover a {
-            color: white;
-        }
-        .navbar a {
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-            transition: all 0.3s ease; /* Smooth transition for underline */
-            position: relative; /* Required for absolute positioning of the underline */
-        }
-
-        .navbar a:hover {
-            color: white;
-        }
-
-        .navbar a:hover::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -3px; /* Adjust as needed to position the underline */
-            width: 100%;
-            height: 3px; /* Adjust as needed to change the thickness of the underline */
-            background-color: rgb(57, 174, 220); /* Change to your desired color */
-            z-index: 2; /* Ensure the underline is above the navbar background */
-        }
-.model{
-    background-color: rgba(132, 132, 132, 0.73);
-    float: left;
-    padding: 15px;
-    margin-left: 70px;
-    margin-right: 60px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    color: white;
-    transition: all ease-in-out 0.5s;
-    max-width: 300px;
-    height: 350px;
-
-}
-.model button{
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.851);
-    color: white;
-}
-.model:hover img{
-    transform:scale(1.8);
-    /* transform: ; */
-    transition: 1s;
-}
-::-webkit-scrollbar {
-  width: 6px;
-  display: none;
-  
-}
-::-webkit-scrollbar-track {
-  background: #afafafc4;
-}
-::-webkit-scrollbar-thumb {
-  background: rgb(68, 0, 255); 
-  border-radius: 20px;
-}
-
-        .img-model{
-            max-width: 300px;
-        max-height: 200px;
-        }
-    .img-model img{
-        max-width: 300px;
-        max-height: 200px;
-        object-fit: cover;
-    }
-</style>
-<style>
-    #loader-wrapper{position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 15; overflow:hidden; height: 140vh;}
-   
-   .loader{width: 150px; height: 150px; border: 1px #fff solid; position: absolute; left: 50%; top: 50%; margin: -75px 0 0 -75px; border-radius: 50%;}
-   
-   .loader .loading{font-size: 10px; position: absolute; width: 100%; text-align: center; line-height: 14px; font-family: 'Century Gothic', sans-serif; font-style: italic; left: 0; top: 50%; margin-top: 20px; color: #fff; font-weight: bold; text-transform: uppercase;}
-   
-   .loader-circle-1{width: 138px; height: 138px; left: 5px; top: 5px; border: 1px #fff solid; border-radius: 50%; position: absolute; border-right-color: transparent;
-   -webkit-animation: spin 3s linear infinite;
-           animation: spin 3s linear infinite;
-   }
-   
-   .loader-circle-2{width: 126px; height: 126px; left: 5px; top: 5px; border: 1px transparent solid; border-radius: 50%; position: absolute; border-right-color: #e81512;
-   -webkit-animation: spin 5s linear infinite;
-           animation: spin 5s linear infinite;
-   }
-   
-   .loader .line{width: 10px; height: 2px; background: #fff; position: absolute;}
-   
-   .loader .line:nth-child(1){left: 16px; top: 50%; margin-top: -1px;}
-   
-   .loader .line:nth-child(2){transform: rotate(45deg); -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); left: 33px; top: 33px;}
-   
-   .loader .line:nth-child(3){top: 16px; left: 50%; width: 2px; height: 10px;}
-   
-   .loader .line:nth-child(4){transform: rotate(135deg); -moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); -ms-transform: rotate(135deg); right: 33px; top: 33px;}
-   
-   .loader .line:nth-child(5){right: 16px; top: 50%; margin-top: -1px;}
-   
-   .loader .line:nth-child(6){transform: rotate(45deg); -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); right: 33px; bottom: 33px; background: #e81512;}
-   
-   .loader .subline{position: absolute; width: 3px; height: 2px; background: #fff;}
-   
-   .loader .subline:nth-child(7){transform: rotate(22.5deg); -moz-transform: rotate(22.5deg); -webkit-transform: rotate(22.5deg); -ms-transform: rotate(22.5deg); left: 21px; top: 50px;}
-   
-   .loader .subline:nth-child(8){transform: rotate(67.5deg); -moz-transform: rotate(67.5deg); -webkit-transform: rotate(67.5deg); -ms-transform: rotate(67.5deg); left: 50px; top: 21px;}
-   
-   .loader .subline:nth-child(9){transform: rotate(112.5deg); -moz-transform: rotate(112.5deg); -webkit-transform: rotate(112.5deg); -ms-transform: rotate(112.5deg); right: 50px; top: 21px;}
-   
-   .loader .subline:nth-child(10){transform: rotate(157.5deg); -moz-transform: rotate(157.5deg); -webkit-transform: rotate(157.5deg); -ms-transform: rotate(157.5deg); right: 21px; top: 50px;}
-   
-   .loader .subline:nth-child(11){transform: rotate(22.5deg); -moz-transform: rotate(22.5deg); -webkit-transform: rotate(22.5deg); -ms-transform: rotate(22.5deg); right: 20px; bottom: 49px; background: #e81512;}
-   
-   .loader .needle{width: 14px; height: 14px; border-radius: 50%; border: 1px #fff solid; position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -8px;  z-index: 1;  
-   -webkit-animation: pegIt 3s infinite ease-in-out;
-           animation: pegIt 3s infinite ease-in-out;
-   }
-   
-   .loader .needle:before{content: ""; width: 0; height: 0; border-style: solid; border-width: 3.5px 50px 3.5px 0; border-color: transparent #e81512 transparent transparent; position: absolute; right: 50%; top: 50%; margin: -3.5px 0 0 0; border-radius: 0 50% 50% 0;}
-   
-   @keyframes pegIt {
-     0% {transform: rotate(0deg);}
-     16% {transform: rotate(75deg);}
-     25% {transform: rotate(55deg);}
-     30% {transform: rotate(90deg);}
-     36% {transform: rotate(170deg);}
-     42% {transform: rotate(150deg);}
-     50% {transform: rotate(227deg);}
-     100% {transform: rotate(0deg);}
-   }
-   
-   @-webkit-keyframes pegIt {
-     0% {-webkit-transform: rotate(0deg);}
-     16% {-webkit-transform: rotate(75deg);}
-     25% {-webkit-transform: rotate(55deg);}
-     30% {-webkit-transform: rotate(90deg);}
-     36% {-webkit-transform: rotate(170deg);}
-     42% {-webkit-transform: rotate(150deg);}
-     50% {-webkit-transform: rotate(227deg);}
-     100% {-webkit-transform: rotate(0deg);}
-   }
-   
-   @-webkit-keyframes spin {
-     0% {-webkit-transform: rotate(0deg);}
-     100% {-webkit-transform: rotate(360deg);}
-   }
-   @keyframes spin {
-     0% {transform: rotate(0deg);}
-     100% {transform: rotate(360deg);}
-       }
-   </style>
 <body>
+
+    <!-- ANIMATED SPEEDOMETER PRELOADER -->
     <div id="loader-wrapper">
         <div class="loader">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="subline"></div>
-          <div class="subline"></div>
-          <div class="subline"></div>
-          <div class="subline"></div>
-          <div class="subline"></div>
-          <div class="loader-circle-1"><div class="loader-circle-2"></div></div>
-          <div class="needle"></div>
-          <div class="loading">Loading</div>
-        </div>
-      </div>
-<header>
-   
-    <div class="navbar">
-        <!-- BMW Logo -->
-        <a href="index.html"><img src="logo.png" alt="BMW Logo" ></a>
-        <div class="menu">
-        <!-- Navigation Links -->
-        <a href="models.html">Models</a>
-        <!-- <a href="Home.html">View Stock</a> -->
-        <a href="driving experiene.html">BMW Driving Experience</a>
-        <a href="Limited_edition.html">Limited edition</a>
-        <div class="search-container">
-            <form action="/search" method="GET">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit">Search</button>
-            </form>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="subline"></div>
+            <div class="loader-circle-1">
+                <div class="loader-circle-2"></div>
+            </div>
+            <div class="needle"></div>
+            <div class="loading">Loading</div>
         </div>
     </div>
-    </div>
-</header>
-<div class="model">
-    <div class="img-model">
-    <img src="img/BMW X3/cosySec.png" alt="preview BMW x3">
-    </div>
-<caption>
-    <h4>BMW x3</h4>
-    <p>Starting from Rs. 1,000,000</p>
-    <a href=""><button>Book Now</button></a>
-</caption>
-</div>
-<div class="model">
-    <div class="img-model">
-    <img src="img/THE ALL-NEW BMW M2 COUPÉ/cosySec.png" alt="preview THE ALL-NEW BMW M2 COUPÉ">
-    </div>
-    <caption>
-        <h4>THE ALL-NEW BMW M2 COUPÉ</h4>
-       
-        <p>Starting from Rs. 1,000,000</p>
-        <a href=""><button>Book Now</button></a>
-    </caption>
-</div>
-<div class="model">
-    <div class="img-model">
-    <img src="img/THE FULLY ELECTRIC BMW i4/cosySec.png" alt="preview THE FULLY ELECTRIC BMW i4">
-    </div>
-    <caption>
-        <h4>THE FULLY ELECTRIC BMW i4</h4>
-       
-        <p>Starting from Rs. 1,000,000</p>
-        <a href=""><button>Book Now</button></a>
-    </caption>
-</div>
-<div class="model">
-    <div class="img-model">
-    <img src="img/THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE/cosySec (1).png" alt="preview THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE">
-    </div>
-    <caption>
-        <h4>THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE</h4>
-       
-        <p>Starting from Rs. 1,000,000</p>
-        <a href=""><button>Book Now</button></a>
-    </caption>
-    </div>
-    <div class="model">
-        <div class="img-model">
-        <img src="img/THE NEW BMW Z4 M40i/cosySec.png" alt="preview THE NEW BMW Z4 M40i">
+
+    <!-- STICKY GLASSMORPHISM NAVBAR (Right-Aligned Search Bar) -->
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand">
+                    <img src="logo.png" alt="BMW Logo">
+                    <span>BMW</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="models.html" class="nav-link active">Models</a>
+                    <a href="Limited_edition.html" class="nav-link">Limited Edition</a>
+                    <a href="driving experiene.html" class="nav-link">M Driving Experience</a>
+                </div>
+            </div>
+
+            <!-- SEARCH BAR: PUSHED TO THE FAR RIGHT -->
+            <div class="search-container">
+                <form class="search-form" id="searchForm" onsubmit="event.preventDefault(); applyLiveSearch();">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search models, specs, M series..." id="searchInput" autocomplete="off" oninput="applyLiveSearch()">
+                    <button type="submit" aria-label="Search">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SHOWROOM HERO HEADER -->
+    <section class="showroom-header">
+        <span class="hero-tag">Official Lineup</span>
+        <h1 class="showroom-title">BMW Model Range</h1>
+        <p class="showroom-subtitle">Discover pure driving excitement across our high-performance M Coupés, pioneering all-electric BMW i series, and versatile luxury SAVs.</p>
+
+        <!-- CATEGORY FILTER CHIPS -->
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all" onclick="filterCategory('all', this)">All Models (6)</button>
+            <button class="filter-tab" data-filter="m" onclick="filterCategory('m', this)">M Performance</button>
+            <button class="filter-tab" data-filter="electric" onclick="filterCategory('electric', this)">All-Electric i</button>
+            <button class="filter-tab" data-filter="sav" onclick="filterCategory('sav', this)">Sports Activity (SAV)</button>
+            <button class="filter-tab" data-filter="roadster" onclick="filterCategory('roadster', this)">Roadster & Coupé</button>
         </div>
-        <caption>
-            <h4>THE NEW BMW Z4 M40i</h4>
-           
-            <p>Starting from Rs. 1,000,000</p>
-            <a href=""><button>Book Now</button></a>
-        </caption>
+    </section>
+
+    <!-- RESPONSIVE CARDS GRID -->
+    <main class="models-grid" id="modelsGrid">
+
+        <!-- MODEL 1: BMW X3 -->
+        <article class="model-card" data-category="sav" data-tags="bmw x3 sav luxury suv xdrive petrol diesel">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-sav">SAV Luxury</span>
+                <img src="img/BMW X3/cosySec.png" alt="BMW X3">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">BMW X3</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Athletic presence with intelligent all-wheel drive versatility.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-val">2.0L TwinPower Turbo</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">248 HP / 350 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/h</div>
+                        <div class="spec-val">6.3 sec</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div class="spec-val">Intelligent xDrive</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹6,850,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('BMW X3', '₹6,850,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODEL 2: BMW M2 COUPÉ -->
+        <article class="model-card" data-category="m roadster" data-tags="bmw m2 coupe m performance twinpower turbo motorsport rear wheel drive">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-m">M Performance</span>
+                <img src="img/THE ALL-NEW BMW M2 COUPÉ/cosySec.png" alt="The All-New BMW M2 Coupé">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">The All-New BMW M2 Coupé</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Pure rear-wheel drive agility with high-revving motorsport DNA.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-val">3.0L M TwinPower Turbo</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">460 HP / 550 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/h</div>
+                        <div class="spec-val">4.1 sec</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div class="spec-val">M Active Diff / RWD</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹9,800,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('The All-New BMW M2 Coupé', '₹9,800,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODEL 3: BMW i4 ELECTRIC -->
+        <article class="model-card" data-category="electric" data-tags="bmw i4 electric gran coupe zero emission edrive range battery ev">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-electric">All-Electric</span>
+                <img src="img/THE FULLY ELECTRIC BMW i4/cosySec.png" alt="The Fully Electric BMW i4">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">The Fully Electric BMW i4</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Zero emissions, electrifying acceleration, and long-distance Gran Coupé comfort.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Powertrain</div>
+                        <div class="spec-val">BMW eDrive Electric</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">340 HP / 430 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Range (WLTP)</div>
+                        <div class="spec-val">Up to 590 km</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Fast Charge</div>
+                        <div class="spec-val">10-80% in 31 min</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹7,250,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('The Fully Electric BMW i4', '₹7,250,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODEL 4: BMW M4 COMPETITION -->
+        <article class="model-card" data-category="m roadster" data-tags="bmw m4 competition coupe m xdrive track racetrack biturbo supercar">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-m">M Flagship</span>
+                <img src="img/THE NEW BMW M4 COMPETITION COUPÉ WITH M xDRIVE/cosySec (1).png" alt="BMW M4 Competition Coupé">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">BMW M4 Competition with M xDrive</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Uncompromising motorsport prowess engineered for dominating track and road.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-val">M TwinPower Turbo S58</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">510 HP / 650 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/h</div>
+                        <div class="spec-val">3.5 sec</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Drivetrain</div>
+                        <div class="spec-val">M xDrive 4WD / 2WD Mode</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹14,800,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('BMW M4 Competition with M xDrive', '₹14,800,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODEL 5: BMW Z4 M40i -->
+        <article class="model-card" data-category="m roadster" data-tags="bmw z4 m40i roadster convertible open top inline 6 sports car">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-m">Roadster</span>
+                <img src="img/THE NEW BMW Z4 M40i/cosySec.png" alt="The New BMW Z4 M40i">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">The New BMW Z4 M40i</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Classic open-top roadster proportions paired with an exhilarating 6-cylinder roar.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-val">3.0L M TwinPower Turbo</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">382 HP / 500 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/h</div>
+                        <div class="spec-val">4.5 sec</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Roof</div>
+                        <div class="spec-val">Soft-top in 10 sec</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹8,990,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('The New BMW Z4 M40i', '₹8,990,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MODEL 6: BMW X5 -->
+        <article class="model-card" data-category="sav" data-tags="bmw x5 luxury sav family xdrive hybrid spacious executive suv">
+            <div class="model-image-wrap">
+                <span class="badge-pill badge-sav">SAV Luxury</span>
+                <img src="img/BMW M2/preview img.png" alt="The New BMW X5">
+            </div>
+            <div class="model-details">
+                <h3 class="model-title">The New BMW X5</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">Executive luxury and authoritative presence with 48V mild hybrid efficiency.</p>
+                
+                <div class="model-specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-val">3.0L Inline-6 48V Hybrid</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-val">375 HP / 520 Nm</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">0-100 km/h</div>
+                        <div class="spec-val">5.4 sec</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Suspension</div>
+                        <div class="spec-val">Adaptive 2-Axle Air</div>
+                    </div>
+                </div>
+
+                <div class="model-price-row">
+                    <div class="price-block">
+                        <span class="price-label">Starting Price</span>
+                        <span class="price-value">₹9,500,000</span>
+                    </div>
+                    <button class="btn-book" onclick="bookVehicle('The New BMW X5', '₹9,500,000')">Book Now</button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- NO RESULTS NOTICE -->
+    <div id="noResults" style="display: none; text-align: center; padding: 60px 20px;">
+        <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 10px;">No vehicles match your search</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Try searching for "M2", "Electric", "X3", or reset filters.</p>
+        <button class="btn btn-secondary" onclick="resetFilters()">View All Models</button>
     </div>
-    <div class="model">
-        <div class="img-model">
-        <img src="img/BMW M2/preview img.png" alt="preview THE NEW BMW X5">
+
+    <!-- BOOKING TOAST NOTICE -->
+    <div class="toast-notice" id="bookingToast">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a2e8" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <div>
+            <strong id="toastTitle" style="display: block; font-size: 14px;">Booking Initiated</strong>
+            <span id="toastMsg" style="font-size: 12px; color: var(--text-secondary);">Your BMW dealership appointment is confirmed.</span>
         </div>
-        <caption>
-            <h4>THE NEW BMW X5</h4>
-           
-            <p>Starting from Rs. 1,000,000</p>
-            <a href=""><button>Book Now</button></a>
-        </caption>
     </div>
+
+    <!-- MODERN LUXURY FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                    <img src="logo.png" alt="BMW" style="width: 36px; height: 36px;">
+                    <h3 style="font-size: 18px; color: #fff; letter-spacing: 1px;">BMW EXPERIENCE</h3>
+                </div>
+                <p>Created for the Spider Hackathon. Celebrating over a century of automotive leadership, visionary electric mobility, and track-proven motorsport heritage.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home Experience</a></li>
+                    <li><a href="models.html">Model Showroom</a></li>
+                    <li><a href="Limited_edition.html">Limited Editions</a></li>
+                    <li><a href="driving experiene.html">M Driving Experience</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="filterCategory('m'); return false;">BMW M Motorsport</a></li>
+                    <li><a href="#" onclick="filterCategory('electric'); return false;">BMW i Electric</a></li>
+                    <li><a href="#" onclick="filterCategory('sav'); return false;">BMW xDrive SAV</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact & Inquiries</h4>
+                <div class="footer-contact-item">
+                    <span>📍</span>
+                    <span>BMW Experience Headquarters, Munich, Germany</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span>📞</span>
+                    <span>+1 (800) 831-1117</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 BMW Digital Experience. Developed for Spider Hackathon by <strong>Nachiket Palekar</strong> & <strong>Ashok Thaniyath</strong>.</p>
+            <div>
+                <a href="https://github.com/Nachiket1311/Spider-hackathon" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT: SPEEDOMETER, LIVE SEARCH, CATEGORY FILTER, BOOKING TOAST -->
     <script>
-        function hideSpeedometer() {
-         const loaderWrapper = document.getElementById('loader-wrapper');
-         loaderWrapper.style.display = 'none';
-         document.scrollingElement.style.display = "content"
-       }
-       
-       // Add an event listener to the window load event
-       window.addEventListener('load', hideSpeedometer);
-           </script>
+        // Dismiss Speedometer Loader smoothly when window finishes loading
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader-wrapper');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 400);
+            }
+        });
+
+        // Live Search & Category Filtering
+        let activeCategory = 'all';
+
+        function filterCategory(cat, btn) {
+            activeCategory = cat;
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                const targetBtn = document.querySelector(`.filter-tab[data-filter="${cat}"]`);
+                if (targetBtn) targetBtn.classList.add('active');
+            }
+            applyLiveSearch();
+        }
+
+        function applyLiveSearch() {
+            const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+            const cards = document.querySelectorAll('.model-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category') || '';
+                const tags = card.getAttribute('data-tags') || '';
+                const title = (card.querySelector('.model-title')?.textContent || '').toLowerCase();
+
+                const matchesCategory = (activeCategory === 'all') || category.includes(activeCategory);
+                const matchesQuery = !query || tags.includes(query) || title.includes(query);
+
+                if (matchesCategory && matchesQuery) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('noResults');
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            filterCategory('all', document.querySelector('.filter-tab[data-filter="all"]'));
+        }
+
+        // On Load: Check URL parameters for search or filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const searchParam = params.get('search');
+            const filterParam = params.get('filter');
+
+            if (searchParam) {
+                document.getElementById('searchInput').value = searchParam;
+                applyLiveSearch();
+            } else if (filterParam) {
+                filterCategory(filterParam);
+            }
+        });
+
+        // Booking Toast
+        function bookVehicle(name, price) {
+            const toast = document.getElementById('bookingToast');
+            document.getElementById('toastTitle').textContent = `Booking Reserved: ${name}`;
+            document.getElementById('toastMsg').textContent = `Configuration locked at ${price}. Priority allocation requested.`;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4500);
+        }
+    </script>
 </body>
 </html>
